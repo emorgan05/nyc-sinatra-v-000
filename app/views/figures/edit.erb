@@ -8,7 +8,7 @@
   <br></br>
 
   <label>Edit one of these titles:</label>
-    <% @titles.each do |title| %>
+    <% @figure.titles.each do |title| %>
       <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>" <%= 'checked' if @figure.titles.include?(title) %>>
         <%= title.name %>
       </input>
@@ -20,7 +20,7 @@
   <br></br>
 
   <label>Edit one of these landmarks:</label>
-    <% @landmarks.each do |landmark| %>
+    <% @figure.landmarks.each do |landmark| %>
       <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>" <%= 'checked' if @figure.landmarks.include?(landmark) %>>
         <%= landmark.name %>
       </input>
