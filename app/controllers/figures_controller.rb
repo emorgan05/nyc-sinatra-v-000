@@ -25,6 +25,15 @@ class FiguresController < ApplicationController
     redirect "/figures/#{@figure.id}"
   end
 
+  get '/figures/:id/edit' do
+    erb :'figures/edit'
+  end
+
+  patch '/figures' do
+    
+    redirect "/figures/#{@figure.id}"
+  end
+  
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
     erb :'figures/show'
