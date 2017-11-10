@@ -42,9 +42,9 @@ class FiguresController < ApplicationController
     # if !params[:figure][:landmark_ids].empty?
     #   @figure.landmark_ids << params[:figure][:landmark_ids]
     # end
-    # if !params[:landmark].empty?
-    #   @figure.landmarks << Landmark.create(params[:landmark])
-    # end
+    if !params[:landmark].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
+    end
     # if !params[:title].empty?
     #   @figure.titles << Title.create(params[:title])
     # end
