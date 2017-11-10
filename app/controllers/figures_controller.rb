@@ -34,14 +34,16 @@ class FiguresController < ApplicationController
   patch '/figures/:id' do
     @figure = Figure.find(params[:id])
     @figure.name = params[:figure][:name]
-    @figure.landmark_ids << params[:figure][:landmark_ids]
     @figure.title_ids << params[:figure][:title_ids]
+    @figure.landmark_ids << params[:figure][:landmark_ids]
+    
     if !params[:landmark].empty?
       @figure.landmarks << Landmark.create(params[:landmark])
     end
     if !params[:title].empty?
       @figure.titles << Title.create(params[:title])
     end
+    @figure.save
     
     redirect "/figures/#{@figure.id}"
   end
