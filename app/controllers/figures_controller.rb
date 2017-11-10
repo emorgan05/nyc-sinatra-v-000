@@ -35,7 +35,7 @@ class FiguresController < ApplicationController
     @figure = Figure.find(params[:id])
     @figure.update(params[:figure])
     # @figure.name = params[:figure][:name]
-    # 
+    #
     # if !params[:figure][:title_ids].empty?
     #   @figure.title_ids << params[:figure][:title_ids]
     # end
