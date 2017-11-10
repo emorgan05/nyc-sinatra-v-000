@@ -36,7 +36,7 @@ class FiguresController < ApplicationController
     @figure.name = params[:figure][:name]
     @figure.title_ids << params[:figure][:title_ids]
     @figure.landmark_ids << params[:figure][:landmark_ids]
-    
+
     if !params[:landmark].empty?
       @figure.landmarks << Landmark.create(params[:landmark])
     end
