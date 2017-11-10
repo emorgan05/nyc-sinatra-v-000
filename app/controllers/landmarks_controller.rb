@@ -9,6 +9,7 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
+    binding.pry
     redirect "/landmarks/#{@landmark.id}"
   end
 
